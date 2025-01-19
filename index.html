@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prezentacja</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #eef2f7;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0056b3, #0073e6);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        main {
+            padding: 2.5rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: linear-gradient(90deg, #0056b3, #0073e6);
+            color: white;
+            margin-top: 3rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .main-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .main-content.active-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .navigation-buttons button {
+            padding: 0.7rem 1.5rem;
+            margin: 0 0.5rem;
+            background: linear-gradient(90deg, #0073e6, #005bb5);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .navigation-buttons button:hover {
+            background: linear-gradient(90deg, #005bb5, #0073e6);
+            transform: scale(1.1);
+        }
+
+        #menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #menu button {
+            width: 200px;
+            padding: 1rem;
+            font-size: 1.2rem;
+            background: linear-gradient(90deg, #0073e6, #005bb5);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        #menu button:hover {
+            background: linear-gradient(90deg, #005bb5, #0073e6);
+            transform: scale(1.05);
+        }
+
+        .back-to-menu {
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+            background: linear-gradient(90deg, #ff5e5e, #ff4040);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-to-menu:hover {
+            background: linear-gradient(90deg, #ff4040, #ff5e5e);
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Przepisy BHP, które należy przestrzegać w szkole jako uczeń</h1>
+    </header>
+    <main>
+        <div id="menu" class="main-content active-content">
+            <button data-target="wprowadzenie">Wprowadzenie</button>
+            <button data-target="rozwiniecie">Rozwinięcie</button>
+            <button data-target="zrodla">Źródła</button>
+        </div>
+
+        <div id="wprowadzenie" class="main-content">
+            <h2>Wprowadzenie</h2>
+            <p>Szkoła jest miejscem, które bez wątpienia jest niejednoznaczne w kontekście opini.
+                 Dla jednych jest to świetne miejsce na edukację, dla innych świetne na nawiązywanie nowych relacji międzyludzkich, a dla jeszcze innych źródło cierpienia i chronicznego stresu.
+                 Jednak bez względu na typ osoby, każdy ma obowiązek przestrzegać zasad BHP w celu zapewnienia i utrzymania poczucia bezpieczeństwa i warunków do prawidłowego funkcjonowania.</p>
+                 <img src="szkola.png">
+            <button class="back-to-menu">Powrót do Menu</button>
+        </div>
+
+        <div id="rozwiniecie" class="main-content">
+            <center><h1>1.Czym jest BHP?</h1>
+            <p>BHP(Bezpieczeństwo i Higiena Pracy) - to zbiór zasad określających sposób wykonywania pracy, w tym sposób zapewnienia pracownikom odpowiednich warunków do pracy, aby jej wykonywanie było bezpieczne i higieniczne</p>
+            <img src="bhp.png">
+            <h1>2.Obowiązki Ustawodawcy</h1>
+            <p>Ustawodawca jest zobowiązany do nakładania na pracodawcę odpowiedzialności za stan bezpieczeństwa i higieny pracy w zakładzie pracy, przy czym obowiązki pracowników w dziedzinie bezpieczeństwa i powierzenie wykonywania zadań służby bezpieczeństwa i higieny pracy specjalistom spoza zakładu pracy nie mają znaczenia w kontekście przyjęć tej odpowiedzialności.
+                <h1>3. Zasady BHP w szkole</h1>
+                <p>Rozporządzenie w sprawie BHP określa zasady funkcjonowania pomieszczeń(sal lekcyjnych, pracowni, labolatoriów, warsztatów, stanowisk nauki praktycznej itp.) szkolnych,które przedstawiają dokładne wytyczne odnośnie zasad i konieczności ich stosowania.
+                    Zasady BHP obejmują też  ćwiczenia fizyczne, zawody sportowe, wycieczki szkolne oraz konieczność zastosowania określonych procedur podczas wystąpienia zagrożenia zdrowia lub życia. Zasady te regulują sposób funkcjonowania w placówce i umożliwia zapewnienie bezpieczeństwa osobom przebywającym w ośrodku.</p>
+                    <img src="classroom.png">
+                <h1>4. Obowiązki dyrektora szkoły w zakresie BHP</h1>
+                <p>Dyrektor szkoły to osoba, która nadzoruje daną placówką i osobami w niej pracującymi. Pełni dużą rolę w utrzymywaniu porządku w szkole. Do jego najważniejszych obowiązków należy m.in. ochrona życia i zdrowia uczniów i innych pracowników szkoły. Dyrektor jest również zobowiązany do zapewniania bezpiecznych i higienicznych warunków dla uczniów i pracowników szkoły, podczas ich obecności na terenie placówki. Wymienione zasady są zgodnie z zasadami BHP sprawdzane przez organy prowadzące przynajmniej raz w roku.</p>
+                <img src="dyrektor.png">
+                <h1>5. Obowiązki uczniów szkoły w zakresie BHP</h1>
+                <p>Każdy uczeń szkoły bez względu na wiek, płeć, zdolności akademickie itp. ma obowiązek przestrzegać zasad BHP, zaś nie przestrzeganie ich wiąże się z obniżeniem stopnia z zachowania lub w bardziej skrajnych przypadkach, wezwaniem rodziców lub organów państwowych(np. policji).<br>
+                <img src="uczeń.png">
+                <h1>6. Bezpieczeństwo w sali lekcyjnej</h1>
+                <img src="sala.png">
+                <img src="plecak.png">
+                <h1>7. Bezpieczeństwo na korytarzach</h1>
+                <img src="zasadynakorytarzach.png">
+                <img src="korytarz.png">
+                <h1>8. Bezpieczeństwo w pracowniach specjalistycznych</h1>
+                <p> W pracowniach chemicznych należy zachować szczególną ostroźność, ze względu na występowanie substancji żrących(np. kwas siarkowy VI), które w kontakcie ze skórą mogą prowadzić do poważnych poparzeń, a w przypadku kontaktu z oczami do utraty wzroku.</p>
+                    <img src="zasadywpracowniachspecjalistycznych.png">
+                    <img src="labolatorium.png" height="300px">
+                <h1>9. Bezpieczeństwo na zajęciach wychowania fizycznego</h1>
+                <img src="wf.png">
+                <img src="wf1.png" height="200px">
+                <h1>10. Higiena osobista i środowiska</h1>
+                <p>Zarówno uczniowie jak i pracownicy placówki, powinni również przestrzegać zasad higieny osobistej, szczególnie podczas wybuchu pandemii COVID-19. Do tych zasad należy m.in.</p>
+                    <img src="higiena.png">
+                    <img src="higiena1.png">
+                <h1>11. Zasady ewakuacji i postępowanie w sytuacjach kryzysowych</h1>
+                <p> Szkoła powinna oprócz wiedzy przedmiotowej, powinna wyposażać uczniów w wiedzę w zakresie ewakuacji i postępowania w kryzysowych sytuacjach. Należy do nich:<br>
+                    <img src="ewakuacja.png">
+                    <img src="ewakuacja1.png" height="500px"> 
+                <h1>12. Zachowanie i szacunek dla innych osób</h1>
+                <p> Nie można również zapomnieć o obowiązku każdego ucznia do zachowania szacunku wobec innych uczniów i pracowników szkoły bez względu na opinię o danej osobie, zachowywaniu się odpowiedzialnie w miejscu publicznym oraz uczesniczeniu w szkoleniach dotyczących przestrzegania zasad BHP, w tym zasad udzielania pierwszej pomocy.<br>
+                    <img src="szacunek.png" height="350px">
+
+
+
+
+
+
+
+            
+                    
+
+
+
+                
+                </center>
+                
+               
+              
+
+           
+    
+            <button class="back-to-menu">Powrót do Menu</button>
+        </div>
+
+        <div id="zrodla" class="main-content">
+            <h2>Źródła</h2>
+            <ul>
+                <li><a href="https://emef-bhp.pl/zasady-bhp-w-szkole-jakie-przepisy-dotycza-placowek-oswiatowych/" target="_blank">Zasady bhp w szkole</a></li>
+                <li><a href="https://mikroporady.pl/slownik-pojec/bezpieczenstwo-i-higiena-pracy-bhp" target="_blank">bezpieczeństwo i higiena pracy</a></li>
+                <li><a href="https://www.pwljm.pl/bhp/bhp-obowiazki-pracodawcy/" target="_blank">Prawa i obowiązki pracodawcy</a></li>
+                <li><a href="https://cloud-a.edupage.org/cloud/bhp.pdf?z%3AGvvwPp327b7nyTVZwT%2BOgE86XVEIiUmhdrQO%2FhEakdPhYQCbdM%2F%2B1cQSAiwGpwIJ" target="_blank">Prawa i obowiązki ucznia</a></li>
+                <li><a href="https://pracownik.kul.pl/files/12440/public/BHP_4.pdf" target="_blank">bhp w szkole najważniejsze zagadnienia</a></li>
+                <li><a href="https://www.youtube.com/watch?v=YZOw6JvT5Ug" target="_blank">Film edukacyjny dla dzieci o bezpieczeństwie - Bezpieczne zachowania
+                </a></li>
+                <li><a href="https://www.youtube.com/watch?v=es000BRePBs" target="_blank">Włącz ostrożność - film edukacyjny</a></li>
+                
+
+
+
+            </ul>
+            <button class="back-to-menu">Powrót do Menu</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Maksymilian Ogorzałek kl. 3BT</p>
+    </footer>
+
+    <script>
+        const menuButtons = document.querySelectorAll('#menu button');
+        const mainContents = document.querySelectorAll('.main-content');
+        const backButtons = document.querySelectorAll('.back-to-menu');
+
+        function showContent(targetId) {
+            mainContents.forEach(content => {
+                content.classList.remove('active-content');
+            });
+            document.getElementById(targetId).classList.add('active-content');
+        }
+
+        menuButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                showContent(targetId);
+            });
+        });
+
+        backButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                showContent('menu');
+            });
+        });
+    </script>
+</body>
+</html>
